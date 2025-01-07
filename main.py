@@ -18,16 +18,18 @@ guessed_states = []
 
 while len(guessed_states) < 29:
     answer_state = screen.textinput(title=f"{len(guessed_states)}/30 correct", prompt="What's another state's name?").lower()
-
-    if answer_state in all_states_list:
-        guessed_states.append(answer_state)
-        t = Turtle()
-        t.hideturtle()
-        t.penup()
-        t.color("yellow")
-        state_data = data[data["state_name"] == answer_state]
-        t.goto(state_data["x"].item(), state_data["y"].item())
-        t.write(answer_state, align="center", font=("Courier", 10, "bold"))
+    if answer_state == "exit":
+        break
+    else:
+        if answer_state in all_states_list:
+            guessed_states.append(answer_state)
+            t = Turtle()
+            t.hideturtle()
+            t.penup()
+            t.color("yellow")
+            state_data = data[data["state_name"] == answer_state]
+            t.goto(state_data["x"].item(), state_data["y"].item())
+            t.write(answer_state, align="center", font=("Courier", 10, "bold"))
 
 
 
