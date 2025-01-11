@@ -22,5 +22,5 @@ To run this game, you need Python installed. Here's how to set up:
 
 1. **Clone the repository:**
    ```bash
-   git clone 
+   git clone https://github.com/ProjectsRO-hit/India_State_Game.git
    cd guess-state-name
